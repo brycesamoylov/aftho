@@ -133,7 +133,7 @@ export function SectionIndex() {
                   <li key={section.id}>
                     <a
                       aria-current={isActive ? "location" : undefined}
-                      aria-label={`${String(index).padStart(2, "0")} — ${section.label}`}
+                      aria-label={`${String(index).padStart(2, "0")} - ${section.label}`}
                       href={`#${section.id}`}
                       onClick={() => setActiveId(section.id)}
                     >

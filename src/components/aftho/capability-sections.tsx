@@ -128,7 +128,7 @@ export function CapabilitySections() {
             </EditorialHeading>
             <p className="website-support text-large">
               We design and build websites when the website is part of the
-              problem—not because every business needs another redesign.
+              problem, not because every business needs another redesign.
             </p>
           </div>
 

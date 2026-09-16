@@ -9,6 +9,7 @@ const navItems = [
   { href: "#problem", label: "How jobs get lost" },
   { href: "#check", label: "Revenue Leak Check" },
   { href: "#services", label: "What we fix" },
+  { href: "#founder", label: "About me" },
   { href: "#faq", label: "FAQ" },
 ];
 

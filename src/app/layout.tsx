@@ -28,7 +28,7 @@ const technical = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AFTHO — Find Where Calls and Jobs Are Getting Lost",
+  title: "AFTHO | Find Where Calls and Jobs Are Getting Lost",
   description:
     "AFTHO helps local service businesses find where calls, quote requests, and follow-up are getting missed, then helps fix the process.",
   icons: {

@@ -26,7 +26,7 @@ const auditSteps = [
   {
     id: "001",
     label: "Observe",
-    description: "Map every place an opportunity enters—from calls and referrals to forms and bookings.",
+    description: "Map every place an opportunity enters, from calls and referrals to forms and bookings.",
   },
   {
     id: "002",

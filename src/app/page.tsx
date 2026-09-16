@@ -25,7 +25,7 @@ export default function Home() {
               <h1>Stop losing jobs you already paid to get.</h1>
               <p className="practical-lede">
                 AFTHO finds where calls, quote requests, website inquiries, and
-                follow-up are getting missed—then helps you fix the process.
+                follow-up are getting missed. Then AFTHO helps you fix the process.
               </p>
               <div className="practical-actions">
                 <ButtonLink href="tel:+19477774333" variant="primary">

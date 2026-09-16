@@ -50,14 +50,14 @@ const traceEvents: TraceEvent[] = [
   {
     id: "06",
     label: "Quote",
-    timestamp: "—",
+    timestamp: "-",
     state: "unknown",
     status: "Not reached",
   },
   {
     id: "07",
     label: "Outcome",
-    timestamp: "—",
+    timestamp: "-",
     state: "unknown",
     status: "Unknown",
   },

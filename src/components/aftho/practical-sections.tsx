@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
 
 const fixes = [
@@ -117,7 +118,7 @@ export function WhatWeFixSection() {
             <h3>A better website makes the next step obvious.</h3>
             <p>
               AFTHO designs and rebuilds websites when the website is part of the
-              problem—not because every business needs another redesign.
+              problem, not because every business needs another redesign.
             </p>
           </div>
 
@@ -191,6 +192,66 @@ export function TrustSection() {
             <li><span>3</span><strong>Decide what to fix</strong><p>Call or email AFTHO to confirm the issue and discuss the smallest useful repair.</p></li>
           </ol>
         </div>
+
+        <section className="founder-section" id="founder" aria-labelledby="founder-title">
+          <div className="founder-portrait">
+            <Image
+              alt="Dmitry, founder of AFTHO"
+              height={1024}
+              sizes="(min-width: 768px) 304px, 256px"
+              src="/dmitry-founder-portrait.png"
+              width={1024}
+            />
+          </div>
+
+          <div className="founder-copy">
+            <h3 id="founder-title">Who you&apos;ll be talking to</h3>
+
+            <p>
+              I&apos;m Dmitry, a Marine Corps veteran. For the past two years I&apos;ve done data
+              analytics work, digging into processes to find where things break down.
+              I kept seeing the same pattern: solid businesses losing jobs they&apos;d already
+              earned, just because a call went unanswered or a quote never got followed up.
+            </p>
+
+            <p>
+              I started AFTHO to fix that one problem. I look at how calls, quote requests,
+              and follow-up move through your business, find where work is slipping through
+              the cracks, and fix the smallest thing that actually moves the needle. The
+              goal is simple: more profit in your pocket, and more of your time back for
+              the work you actually enjoy.
+            </p>
+
+            <p>
+              No sales pitch: AFTHO is brand new, and I&apos;m taking on my first few businesses
+              right now. You get my full attention, and honest pilot pricing while I build
+              my first case studies. And I won&apos;t promise something I&apos;m not sure I can
+              deliver. If I can&apos;t help you, I&apos;ll say so.
+            </p>
+
+            <p>
+              The first step is a free 15-minute call. I&apos;ll ask how you handle calls and
+              quotes today, tell you what I see, and if there&apos;s a fix worth doing, I&apos;ll lay
+              it out in plain English.
+            </p>
+
+            <p className="founder-signature">Dmitry</p>
+
+            <address className="founder-contact">
+              <a href="mailto:dmitry@aftho.com">dmitry@aftho.com</a>
+              <span aria-hidden="true">·</span>
+              <a href="tel:+19477774333">947-777-4333</a>
+              <span
+                aria-hidden="true"
+                className="founder-phone-todo"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    "<!-- TODO: replace phone with Google Voice business number when ready -->",
+                }}
+              />
+            </address>
+          </div>
+        </section>
 
         <div className="practical-faq" id="faq">
           <div className="practical-faq-heading">

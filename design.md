@@ -9,7 +9,7 @@ homepage must explain the offer in plain English within the first viewport:
 AFTHO finds where calls, inquiries, estimates, and potential jobs are being
 lost, then helps fix the responsible part of the process.
 
-The current homepage uses five focused sections:
+The current homepage uses six focused sections:
 
 1. A direct hero for local service businesses.
 2. One concrete example of how a job is lost.
@@ -17,7 +17,12 @@ The current homepage uses five focused sections:
    for contact information.
 4. A concise explanation of what AFTHO fixes, including the existing website
    before/after concept.
-5. Trust, process, comparison, FAQ, and a clear call or review action.
+5. Trust, process, comparison, and a clear explanation of what happens next.
+6. A personal founder introduction, followed by FAQ and a clear call or review action.
+
+The founder section sits between “What happens next” and “Common questions.” It
+uses the founder portrait with first-person copy and does not use the numbered
+procedural rhythm.
 
 Current public contact details:
 
