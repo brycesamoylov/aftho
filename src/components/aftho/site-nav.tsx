@@ -1,14 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ButtonLink } from "@/components/ui/button";
 
 const navItems = [
-  { href: "#audit", label: "How it works" },
-  { href: "#what-aftho-sees", label: "What we find" },
-  { href: "#capabilities", label: "Capabilities" },
-  { href: "#websites", label: "Websites" },
+  { href: "#problem", label: "How jobs get lost" },
+  { href: "#check", label: "Revenue Leak Check" },
+  { href: "#services", label: "What we fix" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export function SiteNav() {
@@ -31,9 +32,7 @@ export function SiteNav() {
 
   useEffect(() => {
     if (!isOpen) return;
-
-    const firstLink = menuRef.current?.querySelector<HTMLAnchorElement>("a");
-    firstLink?.focus();
+    menuRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
   }, [isOpen]);
 
   function closeMenu() {
@@ -41,13 +40,21 @@ export function SiteNav() {
   }
 
   return (
-    <header className="site-header">
-      <div className="page-container nav-frame">
-        <a aria-label="AFTHO home" className="brand-mark" href="#hero">
-          AFTHO
+    <header className="practical-header">
+      <div className="practical-container practical-nav-frame">
+        <a aria-label="AFTHO home" className="practical-brand" href="#hero">
+          <Image
+            alt=""
+            className="practical-brand-logo"
+            height={64}
+            priority
+            src="/aftho-logo.png"
+            width={64}
+          />
+          <span>Revenue leak diagnostics</span>
         </a>
 
-        <nav aria-label="Primary navigation" className="desktop-nav">
+        <nav aria-label="Primary navigation" className="practical-desktop-nav">
           <ul>
             {navItems.map((item) => (
               <li key={item.label}>
@@ -57,26 +64,20 @@ export function SiteNav() {
           </ul>
         </nav>
 
-        <ButtonLink
-          className="desktop-nav-cta"
-          href="#audit"
-          variant="primary"
-        >
-          Run an audit <span aria-hidden="true">↗</span>
+        <ButtonLink className="practical-nav-cta" href="#check" variant="primary">
+          Take the check
         </ButtonLink>
 
         <button
           aria-controls="mobile-navigation"
           aria-expanded={isOpen}
-          className="menu-trigger"
+          className="practical-menu-trigger"
           onClick={() => setIsOpen((open) => !open)}
           ref={triggerRef}
           type="button"
         >
           <span>{isOpen ? "Close" : "Menu"}</span>
-          <span aria-hidden="true" className="menu-mark">
-            {isOpen ? "−" : "+"}
-          </span>
+          <span aria-hidden="true">{isOpen ? "−" : "+"}</span>
         </button>
       </div>
 
@@ -85,31 +86,39 @@ export function SiteNav() {
           <motion.nav
             animate={{ opacity: 1, y: 0 }}
             aria-label="Mobile navigation"
-            className="mobile-nav"
-            exit={shouldReduceMotion ? undefined : { opacity: 0, y: -8 }}
+            className="practical-mobile-nav"
+            exit={shouldReduceMotion ? undefined : { opacity: 0, y: -6 }}
             id="mobile-navigation"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: -8 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: -6 }}
             ref={menuRef}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.16 }}
           >
-            <div className="page-container">
+            <div className="practical-container">
               <ul>
-                {navItems.map((item, index) => (
+                {navItems.map((item) => (
                   <li key={item.label}>
                     <a href={item.href} onClick={closeMenu}>
-                      <span aria-hidden="true">0{index + 1}</span>
                       {item.label}
                     </a>
                   </li>
                 ))}
               </ul>
-              <ButtonLink
-                href="#audit"
-                onClick={closeMenu}
-                variant="primary"
-              >
-                Run an audit <span aria-hidden="true">↗</span>
-              </ButtonLink>
+              <div className="practical-mobile-actions">
+                <ButtonLink
+                  href="tel:+19477774333"
+                  onClick={closeMenu}
+                  variant="primary"
+                >
+                  Call AFTHO
+                </ButtonLink>
+                <ButtonLink
+                  href="mailto:dmitry@aftho.com"
+                  onClick={closeMenu}
+                  variant="secondary"
+                >
+                  Email AFTHO
+                </ButtonLink>
+              </div>
             </div>
           </motion.nav>
         ) : null}

@@ -5,6 +5,7 @@ import {
   Newsreader,
 } from "next/font/google";
 import "./globals.css";
+import "./reposition.css";
 
 const primary = Instrument_Sans({
   variable: "--font-primary",
@@ -27,15 +28,19 @@ const technical = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AFTHO — Business System Diagnostics",
+  title: "AFTHO — Find Where Calls and Jobs Are Getting Lost",
   description:
-    "AFTHO traces what happens between an opportunity entering your business and revenue reaching your account.",
+    "AFTHO helps local service businesses find where calls, quote requests, and follow-up are getting missed, then helps fix the process.",
+  icons: {
+    icon: "/aftho-logo.png",
+    apple: "/aftho-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${primary.variable} ${editorial.variable} ${technical.variable}`}
     >
       <body>{children}</body>

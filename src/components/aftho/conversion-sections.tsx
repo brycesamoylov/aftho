@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "What kinds of businesses is this for?",
     answer:
-      "It is most useful for service businesses that receive calls, enquiries, quote requests, referrals, bookings, or other opportunities that move through several people or tools.",
+      "It is most useful for service businesses that receive calls, inquiries, quote requests, referrals, bookings, or other opportunities that move through several people or tools.",
   },
   {
     question: "Do I need special software?",

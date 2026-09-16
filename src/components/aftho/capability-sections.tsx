@@ -8,7 +8,7 @@ const repairGroups = [
     title: "Capture",
     description: "Make every opportunity enter the system cleanly.",
     capabilities: ["Website", "Landing pages", "Forms", "Calls", "Booking", "Intake"],
-    path: ["Enquiry", "Contact", "Opportunity"],
+    path: ["Inquiry", "Contact", "Opportunity"],
     status: "Captured",
   },
   {
@@ -179,10 +179,10 @@ export function CapabilitySections() {
                 <div className="website-frame-content website-frame-content--after">
                   <span className="concept-label">Illustrative service website</span>
                   <h4>Book a site visit in one minute.</h4>
-                  <p>Choose the service. Share the postcode. Get a confirmed next step.</p>
+                  <p>Choose the service. Share the ZIP code. Get a confirmed next step.</p>
                   <div aria-hidden="true" className="short-form">
                     <span>Service needed</span>
-                    <span>Postcode</span>
+                    <span>ZIP code</span>
                   </div>
                   <span className="concept-action concept-action--clear">Check availability</span>
                   <div className="website-follow-up">

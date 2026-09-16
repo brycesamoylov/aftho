@@ -9,7 +9,7 @@ const hiddenSteps = [
 ];
 
 const businessView = [
-  ["Enquiries", "12"],
+  ["Inquiries", "12"],
   ["Quotes", "07"],
   ["Bookings", "03"],
 ];

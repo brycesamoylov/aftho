@@ -1,5 +1,49 @@
 # AFTHO Website Design System & Implementation Specification
 
+## 2026 audience repositioning — current homepage direction
+
+This section supersedes later homepage guidance wherever the two conflict.
+
+AFTHO primarily serves small local service businesses and contractors. The
+homepage must explain the offer in plain English within the first viewport:
+AFTHO finds where calls, inquiries, estimates, and potential jobs are being
+lost, then helps fix the responsible part of the process.
+
+The current homepage uses five focused sections:
+
+1. A direct hero for local service businesses.
+2. One concrete example of how a job is lost.
+3. A two-minute interactive Revenue Leak Check that gives value before asking
+   for contact information.
+4. A concise explanation of what AFTHO fixes, including the existing website
+   before/after concept.
+5. Trust, process, comparison, FAQ, and a clear call or review action.
+
+Current public contact details:
+
+- Phone: 947-777-4333
+- Email: dmitry@aftho.com
+
+Visual direction:
+
+- white and cool-neutral surfaces
+- dark navy-charcoal text
+- restrained blue for primary actions and active states
+- red only for a detected problem
+- highly readable sans-serif typography and larger body copy
+- conventional navigation and buttons
+- modest spacing instead of cinematic section depth
+- monospace limited to short labels and progress metadata
+- the trace retained as a simple explanatory line, not a technical dashboard
+
+The homepage should not use a persistent section rail, full-screen poster CTA,
+server-style event logs, or long scrollytelling. Motion is limited to short
+state changes that clarify questionnaire progress or cause and effect.
+
+Primary CTA language is `Take the 2-minute Revenue Leak Check`. Website work
+remains a secondary repair capability under `Sometimes the leak is the
+website.`
+
 > **Document purpose:** This file is the authoritative design and UX specification for the AFTHO website.
 >
 > **Primary audience:** Codex and any human designer/developer working on the site.

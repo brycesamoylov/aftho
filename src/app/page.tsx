@@ -1,65 +1,64 @@
-import { EditorialAccent, EditorialHeading } from "@/components/aftho/editorial-heading";
-import { CapabilitySections } from "@/components/aftho/capability-sections";
-import { ConversionSections } from "@/components/aftho/conversion-sections";
-import { RevenueTrace } from "@/components/aftho/revenue-trace";
-import { NarrativeSections } from "@/components/aftho/narrative-sections";
-import { SectionMeta } from "@/components/aftho/section-meta";
+import {
+  ProblemSection,
+  TrustSection,
+  WhatWeFixSection,
+} from "@/components/aftho/practical-sections";
+import { RevenueLeakCheck } from "@/components/aftho/revenue-leak-check";
 import { SiteNav } from "@/components/aftho/site-nav";
-import { SectionIndex } from "@/components/aftho/section-index";
 import { ButtonLink } from "@/components/ui/button";
-import { RevealDiv } from "@/components/ui/reveal";
 
 export default function Home() {
   return (
-    <div className="site-shell">
+    <div className="site-shell practical-site">
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
       <SiteNav />
-      <SectionIndex />
 
       <main id="main-content">
-        <section className="hero" id="hero">
-          <div className="page-container">
-            <div className="hero-meta">
-              <SectionMeta>AFTHO / Business system diagnostics</SectionMeta>
-              <span className="hero-status">
-                <span aria-hidden="true" className="status-dot" />
-                Trace ready
-              </span>
+        <section className="practical-hero" id="hero">
+          <div className="practical-container practical-hero-grid">
+            <div className="practical-hero-copy">
+              <p className="practical-eyebrow">
+                For contractors and local service businesses
+              </p>
+              <h1>Stop losing jobs you already paid to get.</h1>
+              <p className="practical-lede">
+                AFTHO finds where calls, quote requests, website inquiries, and
+                follow-up are getting missed—then helps you fix the process.
+              </p>
+              <div className="practical-actions">
+                <ButtonLink href="tel:+19477774333" variant="primary">
+                  Call AFTHO
+                </ButtonLink>
+                <ButtonLink href="mailto:dmitry@aftho.com" variant="secondary">
+                  Email AFTHO
+                </ButtonLink>
+              </div>
+              <p className="practical-reassurance">
+                Prefer to start privately? <a href="#check">Take the 2-minute Revenue Leak Check.</a>
+              </p>
             </div>
 
-            <div className="hero-grid editorial-grid">
-              <RevealDiv className="hero-heading">
-                <EditorialHeading as="h1" className="hero-title" size="hero">
-                  <span className="hero-title-line">Revenue is leaking</span>{" "}
-                  <EditorialAccent>somewhere.</EditorialAccent>
-                </EditorialHeading>
-                <p className="hero-answer">We find where.</p>
-              </RevealDiv>
-
-              <RevealDiv className="hero-copy" delay={0.14}>
-                <p className="text-large">
-                  AFTHO traces what happens between an opportunity entering your
-                  business and money reaching your account.
-                </p>
-                <div className="hero-actions">
-                  <ButtonLink href="#trace" variant="primary">
-                    Run an audit <span aria-hidden="true">↗</span>
-                  </ButtonLink>
-                  <ButtonLink href="#invisible-middle" variant="secondary">
-                    See the trace
-                  </ButtonLink>
-                </div>
-              </RevealDiv>
-            </div>
-
-            <RevenueTrace />
+            <aside className="hero-proof" aria-label="Problems AFTHO looks for">
+              <p className="practical-kicker">Where jobs slip away</p>
+              <ul>
+                <li>Calls that reach voicemail after hours</li>
+                <li>Quote requests that sit unanswered</li>
+                <li>Leads nobody is clearly responsible for</li>
+                <li>Estimates that never receive a follow-up</li>
+              </ul>
+              <p className="hero-proof-close">
+                The demand was there. The next step was not.
+              </p>
+            </aside>
           </div>
         </section>
-        <NarrativeSections />
-        <CapabilitySections />
-        <ConversionSections />
+
+        <ProblemSection />
+        <RevenueLeakCheck />
+        <WhatWeFixSection />
+        <TrustSection />
       </main>
     </div>
   );
