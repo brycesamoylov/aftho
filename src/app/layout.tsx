@@ -28,12 +28,36 @@ const technical = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aftho.com"),
   title: "AFTHO | Find Where Calls and Jobs Are Getting Lost",
   description:
     "AFTHO helps local service businesses find where calls, quote requests, and follow-up are getting missed, then helps fix the process.",
   icons: {
     icon: "/aftho-logo.png",
     apple: "/aftho-logo.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://aftho.com",
+    siteName: "AFTHO",
+    title: "AFTHO | Revenue Leak Diagnostics",
+    description:
+      "Find where calls, quote requests, and follow-up are getting missed.",
+    images: [
+      {
+        url: "/social-preview.png",
+        width: 1731,
+        height: 909,
+        alt: "AFTHO | Revenue leak diagnostics",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AFTHO | Revenue Leak Diagnostics",
+    description:
+      "Find where calls, quote requests, and follow-up are getting missed.",
+    images: ["/social-preview.png"],
   },
 };
 

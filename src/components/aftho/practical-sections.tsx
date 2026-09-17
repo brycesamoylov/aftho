@@ -223,10 +223,9 @@ export function TrustSection() {
             </p>
 
             <p>
-              No sales pitch: AFTHO is brand new, and I&apos;m taking on my first few businesses
-              right now. You get my full attention, and honest pilot pricing while I build
-              my first case studies. And I won&apos;t promise something I&apos;m not sure I can
-              deliver. If I can&apos;t help you, I&apos;ll say so.
+              I&apos;m currently taking on a small number of founding clients personally. You get
+              my full attention, straightforward pricing and an honest assessment of whether
+              AFTHO can help.
             </p>
 
             <p>
