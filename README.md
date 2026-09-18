@@ -10,7 +10,29 @@ Run the development server with pnpm:
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The current page is a Phase 1 design-system test surface, not the final homepage.
+Open [http://localhost:3000](http://localhost:3000) to view the current homepage.
+
+## Email delivery
+
+The website request form and optional Revenue Leak Check sharing use the Gmail
+API from server-only Next.js routes. Configure these variables locally in
+`.env.local` and in the production host:
+
+```text
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REFRESH_TOKEN=
+AFTHO_MAIL_FROM=
+AFTHO_MAIL_TO=
+```
+
+The Google refresh token must include the `gmail.send` scope. Do not prefix any
+of these variables with `NEXT_PUBLIC_` and do not commit an environment file.
+
+To test locally, run `pnpm dev`, open the site, submit the website request form,
+and complete the Revenue Leak Check. Choosing `No thanks` keeps the results
+private. Choosing `Yes, share results` asks for a name, business, and email,
+then sends the complete result to `AFTHO_MAIL_TO`.
 
 ## Checks
 
@@ -19,4 +41,4 @@ pnpm lint
 pnpm build
 ```
 
-Motion is intentionally deferred until Phase 2 requires animation.
+The production build includes linting, type checking, and route compilation.

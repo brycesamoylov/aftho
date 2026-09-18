@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { RevenueResultsShare } from "@/components/aftho/revenue-results-share";
 import { Button, ButtonLink } from "@/components/ui/button";
 
 type Category = "calls" | "website" | "ownership" | "response" | "followup";
@@ -183,6 +184,15 @@ export function RevenueLeakCheck() {
       .map(([category, score]) => ({ category, score, ...categoryCopy[category] }));
   }, [answers]);
 
+  const assessmentAnswers = useMemo(
+    () =>
+      questions.map((item) => ({
+        answer: item.answers[answers[item.id]]?.label ?? "Not answered",
+        question: item.question,
+      })),
+    [answers],
+  );
+
   useEffect(() => {
     if (step > 0 || showResults) {
       focusRef.current?.focus({ preventScroll: true });
@@ -327,8 +337,13 @@ export function RevenueLeakCheck() {
                 </p>
               )}
 
+              <RevenueResultsShare
+                answers={assessmentAnswers}
+                weaknesses={findings.map(({ finding, title }) => ({ finding, title }))}
+              />
+
               <div className="check-result-actions">
-                <ButtonLink href="tel:+19477774333" variant="primary">
+                <ButtonLink href="tel:+13133649986" variant="primary">
                   Call AFTHO
                 </ButtonLink>
                 <ButtonLink href="mailto:dmitry@aftho.com" variant="secondary">

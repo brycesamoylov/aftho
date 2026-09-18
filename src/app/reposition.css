@@ -617,6 +617,56 @@ body {
   line-height: 1.5;
 }
 
+.results-share {
+  margin-top: 2rem;
+  border: 1px solid var(--border-strong);
+  background: var(--background);
+}
+
+.results-share-choice,
+.results-share-form-wrap,
+.results-share-confirmation {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.results-share-choice {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.results-share h4 {
+  margin: 0.65rem 0 0;
+  color: var(--foreground);
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  font-weight: 680;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.results-share h4 + p,
+.results-share-confirmation > p:not(.practical-kicker),
+.results-share-form-wrap > div > p:last-child {
+  max-width: 58ch;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.results-share-actions,
+.aftho-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.results-share-form-wrap > .aftho-form {
+  margin-top: 1.5rem;
+}
+
+.results-share-confirmation .button {
+  margin-top: 1rem;
+}
+
 .fixes-section {
   border-bottom: 1px solid var(--border);
   background: var(--background);
@@ -740,14 +790,222 @@ body {
   margin-top: 1.5rem;
   padding-inline: 1rem;
   border: 1px solid var(--border-strong);
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 0.95rem;
   font-weight: 670;
+  text-decoration: none;
+  transition:
+    border-color var(--transition-fast) var(--ease-controlled),
+    background-color var(--transition-fast) var(--ease-controlled),
+    color var(--transition-fast) var(--ease-controlled);
+}
+
+.website-example-action:hover {
+  border-color: var(--signal);
+  color: var(--signal);
+}
+
+.website-example-action:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
 }
 
 .website-example--after .website-example-action {
   border-color: var(--signal);
   background: var(--signal);
   color: var(--on-signal);
+}
+
+.website-example--after .website-example-action:hover {
+  background: var(--foreground);
+  border-color: var(--foreground);
+  color: var(--background);
+}
+
+.contact-dialog-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  overflow-y: auto;
+  align-items: center;
+  padding: 1rem;
+  background: rgb(9 16 29 / 72%);
+}
+
+.contact-dialog {
+  width: min(100%, 46rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  margin: auto;
+  border: 1px solid var(--border-strong);
+  box-shadow: inset 0 0.3rem 0 var(--signal), 0 1.5rem 4rem rgb(9 16 29 / 35%);
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+.contact-dialog-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+}
+
+.contact-dialog h3 {
+  max-width: 17ch;
+  margin: 0.7rem 0 0;
+  color: var(--foreground);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 680;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.contact-dialog > p {
+  max-width: 56ch;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.contact-dialog-close {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.contact-dialog-close:hover {
+  border-color: var(--signal);
+  color: var(--signal);
+}
+
+.contact-dialog-close:focus-visible,
+.aftho-field input:focus-visible,
+.aftho-field textarea:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.contact-dialog-close:disabled,
+.aftho-form .button:disabled {
+  cursor: wait;
+  opacity: 0.48;
+}
+
+.aftho-form {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.75rem;
+}
+
+.aftho-form-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.aftho-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.aftho-field label {
+  color: var(--foreground);
+  font-size: 0.92rem;
+  font-weight: 670;
+}
+
+.aftho-field label span {
+  color: var(--leak);
+}
+
+.aftho-field label em {
+  margin-left: 0.35rem;
+  color: var(--subtle);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.aftho-field input,
+.aftho-field textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.aftho-field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.aftho-field input[aria-invalid="true"],
+.aftho-field textarea[aria-invalid="true"] {
+  border-color: var(--leak);
+}
+
+.aftho-field > p,
+.form-message--error {
+  margin: 0;
+  color: var(--leak);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.form-message--error {
+  padding: 0.8rem 1rem;
+  border-left: 0.25rem solid var(--leak);
+  background: rgb(168 59 50 / 8%);
+}
+
+.aftho-form-actions {
+  align-items: center;
+  padding-top: 0.25rem;
+}
+
+.aftho-honeypot {
+  position: fixed;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-success {
+  padding: 1.5rem;
+  margin-top: 1.75rem;
+  border: 1px solid var(--signal);
+  background: var(--signal-muted);
+}
+
+.form-success strong {
+  color: var(--foreground);
+  font-size: 1.25rem;
+}
+
+.form-success p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.form-success .button {
+  margin-top: 1.25rem;
 }
 
 .website-example ul {
@@ -1051,6 +1309,15 @@ body {
 }
 
 @media (min-width: 48rem) {
+  .aftho-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .results-share-choice {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+
   .customer-path {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

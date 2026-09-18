@@ -28,7 +28,7 @@ export default function Home() {
                 follow-up are getting missed. Then AFTHO helps you fix the process.
               </p>
               <div className="practical-actions">
-                <ButtonLink href="tel:+19477774333" variant="primary">
+                <ButtonLink href="tel:+13133649986" variant="primary">
                   Call AFTHO
                 </ButtonLink>
                 <ButtonLink href="mailto:dmitry@aftho.com" variant="secondary">

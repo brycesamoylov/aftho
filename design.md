@@ -26,7 +26,7 @@ procedural rhythm.
 
 Current public contact details:
 
-- Phone: 947-777-4333
+- Phone: 313-364-9986
 - Email: dmitry@aftho.com
 
 Visual direction:
@@ -48,6 +48,10 @@ state changes that clarify questionnaire progress or cause and effect.
 Primary CTA language is `Take the 2-minute Revenue Leak Check`. Website work
 remains a secondary repair capability under `Sometimes the leak is the
 website.`
+
+The website before/after example uses a real intake form for `Submit request`
+and the AFTHO Google Calendar booking link for `Check availability`; neither
+control should be presented as a dead button.
 
 > **Document purpose:** This file is the authoritative design and UX specification for the AFTHO website.
 >

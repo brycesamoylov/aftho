@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContactRequest } from "@/components/aftho/contact-request";
 import { ButtonLink } from "@/components/ui/button";
 
 const fixes = [
@@ -127,7 +128,7 @@ export function WhatWeFixSection() {
               <p className="website-example-label">Before / unclear path</p>
               <h4>Everything your business needs.</h4>
               <p>Quality service and trusted experience. Contact us to learn more.</p>
-              <span className="website-example-action">Submit request</span>
+              <ContactRequest />
               <ul>
                 <li>Vague promise</li>
                 <li>Long contact form</li>
@@ -139,7 +140,13 @@ export function WhatWeFixSection() {
               <p className="website-example-label">AFTHO / repaired path</p>
               <h4>Book a site visit in one minute.</h4>
               <p>Choose the service. Share the ZIP code. Get a confirmed next step.</p>
-              <span className="website-example-action">Check availability</span>
+              <a
+                aria-label="Check AFTHO website repair availability"
+                className="website-example-action"
+                href="https://calendar.app.google/USrvC4Gitk7cphH88"
+              >
+                Check availability
+              </a>
               <ul>
                 <li>Clear offer</li>
                 <li>Shorter form</li>
@@ -239,7 +246,7 @@ export function TrustSection() {
             <address className="founder-contact">
               <a href="mailto:dmitry@aftho.com">dmitry@aftho.com</a>
               <span aria-hidden="true">·</span>
-              <a href="tel:+19477774333">947-777-4333</a>
+              <a href="tel:+13133649986">313-364-9986</a>
               <span
                 aria-hidden="true"
                 className="founder-phone-todo"
@@ -280,7 +287,7 @@ export function TrustSection() {
               is happening in your business.
             </p>
             <div className="practical-actions">
-              <ButtonLink href="tel:+19477774333" variant="primary">Call AFTHO</ButtonLink>
+              <ButtonLink href="tel:+13133649986" variant="primary">Call AFTHO</ButtonLink>
               <ButtonLink href="mailto:dmitry@aftho.com" variant="secondary">Email AFTHO</ButtonLink>
             </div>
           </div>
