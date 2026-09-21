@@ -3,6 +3,7 @@ import {
   cleanMultiline,
   cleanSingleLine,
   getClientKey,
+  isEmailDeliveryRateLimited,
   isRateLimited,
   isStringOverLimit,
   isValidEmail,
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
     return jsonError("That request is too large.", 413);
   }
 
-  if (isRateLimited(`contact:${getClientKey(request)}`)) {
+  if (await isRateLimited(`contact:${getClientKey(request)}`)) {
     return jsonError("Too many requests. Please wait a few minutes and try again.", 429);
   }
 
@@ -68,6 +69,10 @@ export async function POST(request: Request) {
     "Reason for reaching out:",
     reason || "Not provided",
   ].join("\n");
+
+  if (await isEmailDeliveryRateLimited()) {
+    return jsonError("Too many requests. Please wait a few minutes and try again.", 429);
+  }
 
   try {
     await sendAfthoEmail({
