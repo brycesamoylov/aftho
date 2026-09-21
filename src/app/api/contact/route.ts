@@ -1,4 +1,4 @@
-import { sendAfthoEmail } from "@/lib/server/gmail";
+import { logEmailDeliveryError, sendAfthoEmail } from "@/lib/server/gmail";
 import {
   cleanMultiline,
   cleanSingleLine,
@@ -75,8 +75,8 @@ export async function POST(request: Request) {
       subject: `New AFTHO Inquiry - ${businessName}`,
       text,
     });
-  } catch {
-    console.error("AFTHO contact email delivery failed.");
+  } catch (error) {
+    logEmailDeliveryError("AFTHO contact email delivery failed.", error);
     return jsonError("We could not send your request. Please try again or email dmitry@aftho.com.", 502);
   }
 

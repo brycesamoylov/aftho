@@ -8,6 +8,56 @@ type SendAfthoEmailInput = {
   text: string;
 };
 
+type ExternalServiceError = Error & {
+  code?: unknown;
+  response?: {
+    data?: unknown;
+    status?: unknown;
+    statusText?: unknown;
+  };
+  status?: unknown;
+};
+
+const SENSITIVE_FIELD_PATTERN =
+  /authorization|cookie|credential|password|secret|token/i;
+
+function redactSensitiveFields(value: unknown, seen = new WeakSet<object>()): unknown {
+  if (!value || typeof value !== "object") return value;
+  if (seen.has(value)) return "[Circular]";
+
+  seen.add(value);
+
+  if (Array.isArray(value)) {
+    return value.map((entry) => redactSensitiveFields(entry, seen));
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).map(([key, entry]) => [
+      key,
+      SENSITIVE_FIELD_PATTERN.test(key) ? "[REDACTED]" : redactSensitiveFields(entry, seen),
+    ]),
+  );
+}
+
+export function logEmailDeliveryError(context: string, error: unknown) {
+  if (!(error instanceof Error)) {
+    console.error(context, { error: redactSensitiveFields(error) });
+    return;
+  }
+
+  const serviceError = error as ExternalServiceError;
+
+  console.error(context, {
+    code: serviceError.code,
+    message: serviceError.message,
+    name: serviceError.name,
+    responseBody: redactSensitiveFields(serviceError.response?.data),
+    responseStatus: serviceError.response?.status ?? serviceError.status,
+    responseStatusText: serviceError.response?.statusText,
+    stack: serviceError.stack,
+  });
+}
+
 function requireEnvironmentValue(name: string) {
   const value = process.env[name]?.trim();
 

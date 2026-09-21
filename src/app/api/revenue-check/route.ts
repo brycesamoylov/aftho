@@ -1,4 +1,4 @@
-import { sendAfthoEmail } from "@/lib/server/gmail";
+import { logEmailDeliveryError, sendAfthoEmail } from "@/lib/server/gmail";
 import {
   cleanMultiline,
   cleanSingleLine,
@@ -114,8 +114,8 @@ export async function POST(request: Request) {
       subject: `AFTHO Revenue Leak Check - ${businessName}`,
       text,
     });
-  } catch {
-    console.error("AFTHO Revenue Leak Check email delivery failed.");
+  } catch (error) {
+    logEmailDeliveryError("AFTHO Revenue Leak Check email delivery failed.", error);
     return jsonError("We could not share your results. Please try again or email dmitry@aftho.com.", 502);
   }
 
