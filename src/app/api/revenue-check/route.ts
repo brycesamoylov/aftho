@@ -3,7 +3,6 @@ import {
   cleanMultiline,
   cleanSingleLine,
   getClientKey,
-  isEmailDeliveryRateLimited,
   isRateLimited,
   isStringOverLimit,
   isValidEmail,
@@ -18,7 +17,7 @@ export async function POST(request: Request) {
     return jsonError("That request is too large.", 413);
   }
 
-  if (await isRateLimited(`revenue-check:${getClientKey(request)}`)) {
+  if (isRateLimited(`revenue-check:${getClientKey(request)}`)) {
     return jsonError("Too many requests. Please wait a few minutes and try again.", 429);
   }
 
@@ -108,10 +107,6 @@ export async function POST(request: Request) {
     "Complete question and answer list:",
     answerText,
   ].join("\n");
-
-  if (await isEmailDeliveryRateLimited()) {
-    return jsonError("Too many requests. Please wait a few minutes and try again.", 429);
-  }
 
   try {
     await sendAfthoEmail({
